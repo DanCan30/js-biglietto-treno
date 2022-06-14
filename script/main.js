@@ -15,16 +15,20 @@ document.getElementById("start-button").onclick = function mainFunction() {
     const seniorDiscount = (ticketPriceOnKM * 40) / 100;
     const ticketForSenior = ticketPriceOnKM - seniorDiscount;
 
+    let ticketPrice;
+
     if (userAge > 110) {
-        document.getElementById("meme-span").innerHTML = "Congratulations, You should be dead.";
+        document.getElementById("info-span").innerHTML = "Congratulations, You should be dead.";
     }
 
         // Verify if the user write the correct infos (number variable type)
     if ( isNaN(userDistance) == true ) {
+        document.getElementById("info-span").innerHTML = "Please insert a valid mileage. Reload the page.";
         console.log("Please insert a valid mileage. Reload the page.");
 
         // Verify if the user write the correct infos (number variable type)
     } else if ( isNaN(userAge) == true ) {
+        document.getElementById("info-span").innerHTML = "Please insert a valid number. Reload the page.";
         console.log("Please insert a valid number. Reload the page.");
 
     } else {
@@ -46,7 +50,7 @@ document.getElementById("start-button").onclick = function mainFunction() {
 
         // Added more condition for training (and for the meme)
         if ( ticketPrice >= 200 && (userAge >= 18 && userAge < 64) ) {
-            document.getElementById("meme-span").innerHTML = "Better to walk.";
+            document.getElementById("info-span").innerHTML = "Better to walk.";
         }
     }
 

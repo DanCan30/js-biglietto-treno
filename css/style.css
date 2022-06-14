@@ -35,9 +35,8 @@ main p {
     color: white;
 }
 
-#meme-span {
+#info-span {
     display: inline-block;
-    color: blue;
     padding-top: 50px;
     font-size: 2.5rem;
 }
