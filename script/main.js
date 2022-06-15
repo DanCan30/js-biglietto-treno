@@ -15,7 +15,7 @@ document.getElementById("start-button").onclick = function mainFunction() {
     const seniorDiscount = (ticketPriceOnKM * 40) / 100;
     const ticketForSenior = ticketPriceOnKM - seniorDiscount;
 
-    let ticketPrice;
+    let ticketPrice
 
     if (userAge > 110) {
         document.getElementById("info-span").innerHTML = "Congratulations, You should be dead.";
@@ -36,16 +36,19 @@ document.getElementById("start-button").onclick = function mainFunction() {
         if (userAge <= 17) {
             ticketPrice = userDistance * ticketForKid;
             console.log(ticketPrice.toFixed(2));
+            document.getElementById("ticket-cost").innerHTML = ticketPrice.toFixed(2) + "€";
 
         // User over 65. Senior discount applied
         } else if (userAge >= 65) {
             ticketPrice = userDistance * ticketForSenior;
             console.log(ticketPrice.toFixed(2));
+            document.getElementById("ticket-cost").innerHTML = ticketPrice.toFixed(2) + "€";
 
         // Normal price applied
         } else {
             ticketPrice = userDistance * ticketPriceOnKM;
             console.log(ticketPrice.toFixed(2));
+            document.getElementById("ticket-cost").innerHTML = ticketPrice.toFixed(2) + "€";
         }
 
         // Added more condition for training (and for the meme)
@@ -54,5 +57,4 @@ document.getElementById("start-button").onclick = function mainFunction() {
         }
     }
 
-    document.getElementById("ticket-cost").innerHTML = ticketPrice.toFixed(2) + "€";
 }
